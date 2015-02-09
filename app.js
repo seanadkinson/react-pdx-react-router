@@ -43,20 +43,22 @@ if (process.env.NODE_ENV === 'development') {
     require('bluebird').longStackTraces();
 }
 
+
 // Static assets
-app.use(({
-}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-// Application routes
-app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
+// Locals
+app.use(function(req, res, next) {
+    res.locals.appVersion = process.env['APP_VERSION'] || 1;
+    next();
+});
 
 
 
-
+// Application
+app.use('/app', require('./routes/apps'));
 
 
 
