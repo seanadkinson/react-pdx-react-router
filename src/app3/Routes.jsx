@@ -15,6 +15,7 @@ module.exports = (
             <Router.Route name="menu-item" path=":itemId" handler={require('./MenuItem.jsx')}/>
         </Router.Route>
 
+        <Router.Route name="404" handler={require('./NotFound.jsx')} />
         <Router.NotFoundRoute handler={require('./NotFound.jsx')} />
 
     </Router.Route>

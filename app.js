@@ -59,6 +59,7 @@ app.use(function(req, res, next) {
 
 // Application
 app.use('/app', require('./routes/apps'));
+app.use('/items', require('./routes/items'));
 
 
 
