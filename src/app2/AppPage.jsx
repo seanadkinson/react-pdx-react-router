@@ -4,7 +4,7 @@ var React = require('react'),
     Router = require('react-router');
 
 
-var Application = React.createClass({
+var AppPage = React.createClass({
     mixins: [
         Router.State
     ],
@@ -46,4 +46,4 @@ var Application = React.createClass({
 });
 
 
-module.exports = Application;
+module.exports = AppPage;
