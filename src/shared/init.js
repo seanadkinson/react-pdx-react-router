@@ -1,4 +1,5 @@
-"use strict";
+
+__webpack_public_path__ = '/js/build/';
 
 var $ = require('jquery'),
     Promise = require('bluebird');
