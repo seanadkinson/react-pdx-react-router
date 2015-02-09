@@ -6,7 +6,8 @@ module.exports = {
     debug: true,
     devtool: "source-map",
     entry: {
-        app1: "./src/app1/app1.js"
+        app1: "./src/app1/app1.js",
+        app2: "./src/app2/app2.js"
     },
     output: {
         path: "/", //path doesn't matter in dev mode... it is overwritten in production to "./public/js/build"
