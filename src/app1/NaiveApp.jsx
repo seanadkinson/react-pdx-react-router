@@ -30,12 +30,12 @@ var Application = React.createClass({
                                 <a href="" onClick={this.showPage.bind(this, 'home')}>Home</a>
                             </li>
 
-                            <li role="presentation" className={this.state.page == 'beer' ? 'active' : ''}>
-                                <a href="" onClick={this.showPage.bind(this, 'beer')}>Beer</a>
-                            </li>
-
                             <li role="presentation" className={this.state.page == 'menu' ? 'active' : ''}>
                                 <a href="" onClick={this.showPage.bind(this, 'menu')}>Menu</a>
+                            </li>
+
+                            <li role="presentation" className={this.state.page == 'contact' ? 'active' : ''}>
+                                <a href="" onClick={this.showPage.bind(this, 'contact')}>Contact</a>
                             </li>
 
                         </ul>
@@ -51,8 +51,8 @@ var Application = React.createClass({
     renderPage: function() {
         switch (this.state.page) {
             case 'home': return <HomePage/>;
-            case 'beer': return <BeerPage/>;
             case 'menu': return <MenuPage/>;
+            case 'contact': return <ContactPage/>;
         }
     }
 
@@ -70,23 +70,23 @@ var HomePage = React.createClass({
     }
 });
 
-var BeerPage = React.createClass({
-    render: function() {
-        return (
-            <div>
-                <h3>Beer Page</h3>
-                Check out our wide variety of beers to choose from.
-            </div>
-        );
-    }
-});
-
 var MenuPage = React.createClass({
     render: function() {
         return (
             <div>
                 <h3>Menu Page</h3>
                 Look at our nice menu of food to eat.
+            </div>
+        );
+    }
+});
+
+var ContactPage = React.createClass({
+    render: function() {
+        return (
+            <div>
+                <h3>Contact Page</h3>
+                See below for contact information.
             </div>
         );
     }

@@ -25,12 +25,12 @@ var Application = React.createClass({
                                 <Router.Link to="home">Home</Router.Link>
                             </li>
 
-                            <li role="presentation" className={this.isActive('beer') && 'active'}>
-                                <Router.Link to="beer">Beer</Router.Link>
-                            </li>
-
                             <li role="presentation" className={this.isActive('menu') && 'active'}>
                                 <Router.Link to="menu">Menu</Router.Link>
+                            </li>
+
+                            <li role="presentation" className={this.isActive('contact') && 'active'}>
+                                <Router.Link to="contact">Contact</Router.Link>
                             </li>
 
                         </ul>

@@ -6,7 +6,8 @@ var React = require('react'),
 module.exports = (
     <Router.Route handler={require('./AppPage.jsx')}>
         <Router.Route name="home" path="/" handler={require('./HomePage.jsx')} />
-        <Router.Route name="beer" handler={require('./BeerPage.jsx')} />
         <Router.Route name="menu" handler={require('./MenuPage.jsx')} />
+        <Router.Route name="contact" handler={require('./ContactPage.jsx')} />
     </Router.Route>
 );
+
