@@ -2,27 +2,39 @@
 
 var React = require('react'),
     Router = require('react-router'),
-    ItemStore = require('./ItemStore');
+    Promise = require('bluebird'),
+    $ = require('jquery');
 
 
 var MenuItem = React.createClass({
     mixins: [
         Router.State
     ],
-    statics: {
-        willTransitionTo: function(transition, params) {
-            if (!ItemStore.getItemById(params.itemId)) {
-                transition.redirect('404');
-            }
-        }
+
+    getInitialState: function() {
+        return {
+            item: null
+        };
+    },
+
+    componentDidMount: function() {
+        Promise.resolve($.getJSON('/items/' + this.getParams().itemId))
+            .then(function(item) {
+                this.setState({
+                    item: item
+                });
+            }.bind(this))
     },
 
     render: function() {
-        var item = ItemStore.getItemById(this.getParams().itemId);
+        if (!this.state.item) {
+            return <div>Loading...</div>;
+        }
+
         return (
             <div>
-                <h5>{item.name}</h5>
-                <p>This item's id is: {item.id}</p>
+                <h5>{this.state.item.name}</h5>
+                <p>This item's id is: {this.state.item.id}</p>
             </div>
         );
     }

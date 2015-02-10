@@ -3,25 +3,14 @@
 var React = require('react'),
     Router = require('react-router'),
     _ = require('lodash'),
-    $ = require('jquery'),
-    Promise = require('bluebird');
+    ItemStore = require('./ItemStore');
 
 
 var MenuIndex = React.createClass({
-
-    getInitialState: function() {
-        return {
-            items: null
-        };
-    },
-
-    componentDidMount: function() {
-        Promise.resolve($.getJSON('/items'))
-            .then(function(items) {
-                this.setState({
-                    items: items
-                });
-            }.bind(this));
+    statics: {
+        willTransitionTo: function(transition) {
+            transition.wait(ItemStore.ensureItemsLoaded());
+        }
     },
 
     render: function() {
@@ -35,11 +24,7 @@ var MenuIndex = React.createClass({
     },
 
     getItemLinks: function() {
-        if (!this.state.items) {
-            return <li>Loading...</li>;
-        }
-
-        return _.map(this.state.items, function(item) {
+        return _.map(ItemStore.getItems(), function(item) {
             return (
                 <li key={item.id}>
                     <Router.Link to="menu-item" params={{itemId: item.id}}>{item.name}</Router.Link>
