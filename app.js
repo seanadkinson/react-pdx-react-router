@@ -61,6 +61,9 @@ app.use(function(req, res, next) {
 app.use('/app', require('./routes/apps'));
 app.use('/items', require('./routes/items'));
 
+app.get('/', function(req, res) {
+    res.redirect('/app/1');
+});
 
 
 
