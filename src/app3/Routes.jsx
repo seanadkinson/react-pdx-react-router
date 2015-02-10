@@ -17,7 +17,7 @@ module.exports = (
             {/*  path: /menu  */}
             <Router.DefaultRoute name="menu-index" handler={require('./MenuIndex.jsx')}/>
 
-            {/*  path: /menu/123  */}
+            {/*  path: /menu/:itemId  */}
             <Router.Route name="menu-item" path=":itemId" handler={require('./MenuItem.jsx')}/>
 
         </Router.Route>

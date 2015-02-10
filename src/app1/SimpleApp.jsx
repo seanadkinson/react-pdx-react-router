@@ -2,6 +2,10 @@
 
 var React = require('react');
 
+var HomePage = require('./HomePage.jsx'),
+    MenuPage = require('./MenuPage.jsx'),
+    ContactPage = require('./ContactPage.jsx');
+
 
 var Application = React.createClass({
 
@@ -56,40 +60,6 @@ var Application = React.createClass({
         }
     }
 
-});
-
-
-var HomePage = React.createClass({
-    render: function() {
-        return (
-            <div>
-                <h3>Home Page</h3>
-                This is the home page
-            </div>
-        );
-    }
-});
-
-var MenuPage = React.createClass({
-    render: function() {
-        return (
-            <div>
-                <h3>Menu Page</h3>
-                Look at our nice menu of food to eat.
-            </div>
-        );
-    }
-});
-
-var ContactPage = React.createClass({
-    render: function() {
-        return (
-            <div>
-                <h3>Contact Page</h3>
-                See below for contact information.
-            </div>
-        );
-    }
 });
 
 
