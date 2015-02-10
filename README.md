@@ -3,7 +3,7 @@ react-pdx-react-router
 
 Presented at React PDX on February 10, 2015.
 
-## Running Examples
+## Running Code
 
 ```
 $ npm install
@@ -16,3 +16,4 @@ Then open browser to any of:
  - http://localhost:3000/app/2
  - http://localhost:3000/app/3
  - http://localhost:3000/app/4
+ 
