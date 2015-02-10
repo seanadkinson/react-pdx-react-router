@@ -27,7 +27,9 @@ var MenuIndex = React.createClass({
         return _.map(ItemStore.getItems(), function(item) {
             return (
                 <li key={item.id}>
-                    <Router.Link to="menu-item" params={{itemId: item.id}}>{item.name}</Router.Link>
+                    <Router.Link to="menu-item" params={{itemId: item.id}}>
+                        {item.name}
+                    </Router.Link>
                 </li>
             );
         });
