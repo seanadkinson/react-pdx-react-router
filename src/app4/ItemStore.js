@@ -10,13 +10,12 @@ var ItemStore = {
 
     ensureItemsLoaded: function() {
         if (items) {
-            return Promise.resolve(items);
+            return Promise.resolve();
         }
         else {
             return Promise.resolve($.getJSON('/items'))
                 .then(function(retrievedItems) {
                     items = retrievedItems;
-                    return items;
                 });
         }
     },

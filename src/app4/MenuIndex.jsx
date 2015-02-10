@@ -8,8 +8,8 @@ var React = require('react'),
 
 var MenuIndex = React.createClass({
     statics: {
-        willTransitionTo: function(transition) {
-            transition.wait(ItemStore.ensureItemsLoaded());
+        willTransitionTo: function(transition, params, query, callback) {
+            ItemStore.ensureItemsLoaded().then(callback);
         }
     },
 
