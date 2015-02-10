@@ -16,4 +16,10 @@ Then open browser to any of:
  - http://localhost:3000/app/2
  - http://localhost:3000/app/3
  - http://localhost:3000/app/4
- 
+
+## Links
+
+[react-router](https://github.com/rackt/react-router)
+
+[react-router-proxy-loader](https://github.com/odysseyscience/react-router-proxy-loader)
+
